@@ -45,7 +45,7 @@ public class PlayerDetection : MonoBehaviour
 
     //}
 
-    public bool CanGoThere(Vector3 targetPosition, out Collider firstCollider)
+    public bool CanGoThere(Vector3 targetPosition/*, out Collider firstCollider*/)
     {
         Vector3 center = targetPosition + capsuleCollider.center;
 
@@ -58,13 +58,14 @@ public class PlayerDetection : MonoBehaviour
 
         Collider[] colliders = Physics.OverlapCapsule(point0,point1,capsuleCollider.radius,groundMask);
 
-        if (colliders.Length > 0)
-            firstCollider = colliders[0];
-        else
-            firstCollider = null;
+     
+        //if (colliders.Length > 0)
+        //    firstCollider = colliders[0];
+        //else
+        //    firstCollider = null;
 
 
-        return colliders.Length <= 0;
+        return colliders.Length <= 0 || playerController.hitCeiling;
 
     }
 
@@ -72,7 +73,7 @@ public class PlayerDetection : MonoBehaviour
     {
         return Physics.OverlapBox(boxCollider.transform.position, boxCollider.size / 2, Quaternion.identity, groundMask).Length>0;
     }
-
+   
     private void DetectTrampolines()
     {
         if (!IsGrounded()) return;

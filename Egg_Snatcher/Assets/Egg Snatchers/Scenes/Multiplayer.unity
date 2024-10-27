@@ -1305,14 +1305,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562259737}
-  - component: {fileID: 562259738}
   m_Layer: 0
   m_Name: CeilingDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &562259737
 Transform:
   m_ObjectHideFlags: 0
@@ -1328,27 +1327,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2125137847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &562259738
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562259736}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40311357, y: 0.083800435, z: 1}
-  m_Center: {x: 0.01623337, y: -0.038531125, z: 0}
 --- !u!1 &563504296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2380,7 @@ GameObject:
   - component: {fileID: 810869153}
   - component: {fileID: 810869152}
   - component: {fileID: 810869151}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2970,7 +2948,7 @@ GameObject:
   - component: {fileID: 862010475}
   - component: {fileID: 862010474}
   - component: {fileID: 862010473}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3812,8 +3790,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.40311357, y: 0.083800435, z: 1}
-  m_Center: {x: 0.01623337, y: -0.038531125, z: 0}
+  m_Size: {x: 0.20082903, y: 0.083800435, z: 1}
+  m_Center: {x: -0.029760122, y: -0.038531125, z: 0}
 --- !u!1 &1097936873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4396,18 +4374,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mobile Joystick Zone
       objectReference: {fileID: 0}
-    - target: {fileID: 1127573996609057481, guid: 10090517b0ea82a4fa4ec5dc6d9e630d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127573996609057481, guid: 10090517b0ea82a4fa4ec5dc6d9e630d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127573996609057481, guid: 10090517b0ea82a4fa4ec5dc6d9e630d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4913,6 +4879,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 863139981893492669, guid: d643cec520220db4a88fd744deeeed86, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1615406649567507964, guid: d643cec520220db4a88fd744deeeed86, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -4957,6 +4927,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4396166821927217361, guid: d643cec520220db4a88fd744deeeed86, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6198609742045267036, guid: d643cec520220db4a88fd744deeeed86, type: 3}
       propertyPath: m_Name
       value: Platform_5x1 (2)
@@ -4975,6 +4949,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8505156289056717307, guid: d643cec520220db4a88fd744deeeed86, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555078159507071346, guid: d643cec520220db4a88fd744deeeed86, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925707656350670476, guid: d643cec520220db4a88fd744deeeed86, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8119,6 +8101,7 @@ GameObject:
   - component: {fileID: 2125137849}
   - component: {fileID: 2125137850}
   - component: {fileID: 2125137851}
+  - component: {fileID: 2125137852}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8163,9 +8146,11 @@ MonoBehaviour:
   moveSpeed: 6
   jumpSpeed: 20
   groundDetector: {fileID: 1083531454}
+  ceilingDetector: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  hitCeiling: 0
 --- !u!114 &2125137849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8230,6 +8215,19 @@ CapsuleCollider:
   m_Height: 2.3212485
   m_Direction: 1
   m_Center: {x: 0.00033542514, y: 3.02866, z: 0}
+--- !u!114 &2125137852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125137846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f503ef80b8e3bfe4a8ea0d39f60ad823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8947388704634598084}
 --- !u!1 &2134590865
 GameObject:
   m_ObjectHideFlags: 0
@@ -8878,7 +8876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414068930887545348}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
@@ -8887,7 +8885,7 @@ Transform:
   - {fileID: 2214091897416627163}
   - {fileID: 6524077716871403955}
   m_Father: {fileID: 2125137847}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &3154725774391129249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9915,7 +9913,7 @@ Animator:
   m_GameObject: {fileID: 2414068930887545348}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 422d303827b023246a2be13af615ae61, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3935ddc45e348344da85489fab82e3ed, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

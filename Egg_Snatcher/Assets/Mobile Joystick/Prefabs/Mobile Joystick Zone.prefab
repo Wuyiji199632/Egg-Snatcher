@@ -309,4 +309,4 @@ MonoBehaviour:
   joystickZone: {fileID: 1127573995826686694}
   joystickOutline: {fileID: 1127573995357375090}
   joystickKnob: {fileID: 1127573995105584541}
-  moveFactor: 540
+  moveFactor: 1
