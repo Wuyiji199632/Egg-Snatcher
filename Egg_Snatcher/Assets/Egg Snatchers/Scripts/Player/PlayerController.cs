@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
 
     enum PlayerState
@@ -15,10 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerState playerState = PlayerState.Grounded;
     [Header("Components")]
     [SerializeField] private PlayerDetection playerDetection;
-
-    [Header("Elements")]
-    [SerializeField] private MobileJoystick joystick;
-
+   
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 5f,jumpSpeed;
 
@@ -43,6 +41,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner)
+            return;
+
+
         MoveHorizontal();
 
         MoveVertical();
@@ -133,9 +135,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    [Rpc(SendTo.Everyone)]
+    private void UpdateXSpeedRpc(float xSpeed)
+    {
+        this.xSpeed = xSpeed;
+    }
+
+
     private void MoveHorizontal()
     {
-        Vector2 moveVector = joystick.GetMoveVector();
+        Vector2 moveVector = InputManager.Instance.GetMoveVector();
+        UpdateXSpeedRpc(Mathf.Abs(moveVector.x));
         xSpeed = Mathf.Abs(moveVector.x);
         ManageFacing(moveVector.x);
         moveVector.x *= moveSpeed;

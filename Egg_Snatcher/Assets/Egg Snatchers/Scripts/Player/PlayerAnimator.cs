@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour
+public class PlayerAnimator : NetworkBehaviour
 {
 
     [Header("Elements")]
@@ -24,7 +25,7 @@ public class PlayerAnimator : MonoBehaviour
         playerController.OnLandStarted += Land;
     }
 
-    private void OnDestroy()
+    public override void OnDestroy()
     {
         playerController.OnJumpStarted -= Jump;
 
@@ -35,10 +36,10 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateBlendTree();
+        UpdateBlendTreeRpc();
     }
-
-    private void UpdateBlendTree()
+    [Rpc(SendTo.Everyone)]
+    private void UpdateBlendTreeRpc()
     {
         animator.SetFloat("xSpeed", playerController.xSpeed);
     }
