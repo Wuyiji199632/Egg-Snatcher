@@ -41,7 +41,7 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsOwner)
+        if (!IsOwner||!GameManager.instance.IsGameState())
             return;
 
 

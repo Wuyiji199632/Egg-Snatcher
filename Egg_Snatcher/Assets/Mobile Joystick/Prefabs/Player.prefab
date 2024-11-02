@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 3564937928467375204}
   - component: {fileID: 8299952780727505446}
   - component: {fileID: -7723101341249855692}
+  - component: {fileID: 7135328268742214525}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -315,8 +316,13 @@ MonoBehaviour:
   trampolineMask:
     serializedVersion: 2
     m_Bits: 64
+  eggMask:
+    serializedVersion: 2
+    m_Bits: 256
   boxCollider: {fileID: 2001327185479415357}
   capsuleCollider: {fileID: 3019501717567059679}
+  eggGrabbedHeight: 4
+  canStealEgg: 0
 --- !u!65 &2137197539562175384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -436,6 +442,22 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0
+--- !u!114 &7135328268742214525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685854415542428842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096e58cc5cce0164a83bd8cd430d3620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 3297688996082036593}
+  - {fileID: 6923527378371288641}
+  fillAmount: 0
 --- !u!1 &1751955938125612288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4581589211112567737
 Transform:
   m_ObjectHideFlags: 0
