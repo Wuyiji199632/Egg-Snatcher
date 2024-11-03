@@ -28,11 +28,20 @@ public class CameraManager : NetworkBehaviour
         NetworkManager.OnClientConnectedCallback += ClientConnectedCallback;
     }
 
-    public override void OnDestroy()
+    //public override void OnDestroy()
+    //{
+    //    base.OnDestroy();
+    //    if (!IsServer) return;
+    //    NetworkManager.OnClientConnectedCallback -= ClientConnectedCallback;
+    //}
+
+    public override void OnNetworkDespawn()
     {
-        base.OnDestroy();
+        base.OnNetworkDespawn();
+
         if (!IsServer) return;
         NetworkManager.OnClientConnectedCallback -= ClientConnectedCallback;
+        NetworkManager.OnServerStarted -= ServerConnectedCallback;
     }
     private void ClientConnectedCallback(ulong clientID)
     {

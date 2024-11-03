@@ -20,11 +20,16 @@ public class PlayerPlacer : NetworkBehaviour
     }
 
 
-    public override void OnDestroy()
+    //public override void OnDestroy()
+    //{
+    //    NetworkManager.OnClientConnectedCallback -= ClientConnectedCallback;
+    //}
+    public override void OnNetworkDespawn()
     {
+        base.OnNetworkDespawn();
+
         NetworkManager.OnClientConnectedCallback -= ClientConnectedCallback;
     }
-
     private void ClientConnectedCallback(ulong clientId)
     {
         if (!IsServer) return;
